@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -100,5 +101,15 @@ public class General {
 		} catch (IOException exception) {
 			return false;
 		}
+	}
+
+	/**
+	 * This method is used to get SQL date from the normal date
+	 * 
+	 * @param date - reference to the Date object
+	 * @return SQL date corresponding to the given date
+	 */
+	public static java.sql.Date getSQLDate(Date date) {
+		return new java.sql.Date(date.getTime());
 	}
 }
